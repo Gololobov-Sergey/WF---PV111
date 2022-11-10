@@ -29,20 +29,11 @@
         private void InitializeComponent()
         {
             this.Cafe = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtbox8 = new System.Windows.Forms.TextBox();
-            this.txtbox7 = new System.Windows.Forms.TextBox();
-            this.txtbox6 = new System.Windows.Forms.TextBox();
-            this.txtbox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtbox4 = new System.Windows.Forms.TextBox();
-            this.txtbox3 = new System.Windows.Forms.TextBox();
-            this.txtbox2 = new System.Windows.Forms.TextBox();
-            this.txtbox1 = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.FoodPrice = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Price2 = new System.Windows.Forms.Label();
@@ -75,165 +66,66 @@
             // 
             // Cafe
             // 
+            this.Cafe.Controls.Add(this.panel1);
+            this.Cafe.Controls.Add(this.textBox6);
+            this.Cafe.Controls.Add(this.textBox7);
             this.Cafe.Controls.Add(this.label8);
-            this.Cafe.Controls.Add(this.txtbox8);
-            this.Cafe.Controls.Add(this.txtbox7);
-            this.Cafe.Controls.Add(this.txtbox6);
-            this.Cafe.Controls.Add(this.txtbox5);
             this.Cafe.Controls.Add(this.label7);
-            this.Cafe.Controls.Add(this.txtbox4);
-            this.Cafe.Controls.Add(this.txtbox3);
-            this.Cafe.Controls.Add(this.txtbox2);
-            this.Cafe.Controls.Add(this.txtbox1);
-            this.Cafe.Controls.Add(this.checkBox4);
-            this.Cafe.Controls.Add(this.checkBox3);
-            this.Cafe.Controls.Add(this.checkBox2);
-            this.Cafe.Controls.Add(this.checkBox1);
             this.Cafe.Controls.Add(this.FoodPrice);
             this.Cafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cafe.ForeColor = System.Drawing.Color.IndianRed;
-            this.Cafe.Location = new System.Drawing.Point(338, 22);
+            this.Cafe.Location = new System.Drawing.Point(311, 22);
             this.Cafe.Name = "Cafe";
-            this.Cafe.Size = new System.Drawing.Size(265, 368);
+            this.Cafe.Size = new System.Drawing.Size(292, 368);
             this.Cafe.TabIndex = 0;
             this.Cafe.TabStop = false;
             this.Cafe.Text = "Міні-Кафе";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Location = new System.Drawing.Point(7, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(279, 151);
+            this.panel1.TabIndex = 17;
+            // 
+            // textBox6
+            // 
+            this.textBox6.ForeColor = System.Drawing.Color.Tomato;
+            this.textBox6.Location = new System.Drawing.Point(83, 144);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(69, 22);
+            this.textBox6.TabIndex = 21;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox7
+            // 
+            this.textBox7.ForeColor = System.Drawing.Color.Tomato;
+            this.textBox7.Location = new System.Drawing.Point(159, 144);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(69, 22);
+            this.textBox7.TabIndex = 22;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(187, 48);
+            this.label8.Location = new System.Drawing.Point(190, 48);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 15);
             this.label8.TabIndex = 16;
             this.label8.Text = "Кількість";
             // 
-            // txtbox8
-            // 
-            this.txtbox8.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox8.Location = new System.Drawing.Point(190, 195);
-            this.txtbox8.Name = "txtbox8";
-            this.txtbox8.Size = new System.Drawing.Size(69, 22);
-            this.txtbox8.TabIndex = 15;
-            this.txtbox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox7
-            // 
-            this.txtbox7.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox7.Location = new System.Drawing.Point(190, 155);
-            this.txtbox7.Name = "txtbox7";
-            this.txtbox7.Size = new System.Drawing.Size(69, 22);
-            this.txtbox7.TabIndex = 14;
-            this.txtbox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox6
-            // 
-            this.txtbox6.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox6.Location = new System.Drawing.Point(190, 115);
-            this.txtbox6.Name = "txtbox6";
-            this.txtbox6.Size = new System.Drawing.Size(69, 22);
-            this.txtbox6.TabIndex = 13;
-            this.txtbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox5
-            // 
-            this.txtbox5.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox5.Location = new System.Drawing.Point(190, 75);
-            this.txtbox5.Name = "txtbox5";
-            this.txtbox5.Size = new System.Drawing.Size(69, 22);
-            this.txtbox5.TabIndex = 12;
-            this.txtbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(133, 48);
+            this.label7.Location = new System.Drawing.Point(113, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 15);
             this.label7.TabIndex = 11;
             this.label7.Text = "Ціна";
-            // 
-            // txtbox4
-            // 
-            this.txtbox4.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox4.Location = new System.Drawing.Point(115, 195);
-            this.txtbox4.Name = "txtbox4";
-            this.txtbox4.Size = new System.Drawing.Size(69, 22);
-            this.txtbox4.TabIndex = 8;
-            this.txtbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox3
-            // 
-            this.txtbox3.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox3.Location = new System.Drawing.Point(115, 155);
-            this.txtbox3.Name = "txtbox3";
-            this.txtbox3.Size = new System.Drawing.Size(69, 22);
-            this.txtbox3.TabIndex = 7;
-            this.txtbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox2
-            // 
-            this.txtbox2.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox2.Location = new System.Drawing.Point(115, 115);
-            this.txtbox2.Name = "txtbox2";
-            this.txtbox2.Size = new System.Drawing.Size(69, 22);
-            this.txtbox2.TabIndex = 6;
-            this.txtbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtbox1
-            // 
-            this.txtbox1.ForeColor = System.Drawing.Color.Tomato;
-            this.txtbox1.Location = new System.Drawing.Point(115, 75);
-            this.txtbox1.Name = "txtbox1";
-            this.txtbox1.Size = new System.Drawing.Size(69, 22);
-            this.txtbox1.TabIndex = 5;
-            this.txtbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(13, 197);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(79, 17);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "Кока-Кола";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(13, 157);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(96, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Картопля-Фрі";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(13, 117);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Гамбургер";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(13, 77);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(61, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Хотдог";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FoodPrice
             // 
@@ -242,7 +134,7 @@
             this.FoodPrice.ForeColor = System.Drawing.Color.IndianRed;
             this.FoodPrice.Location = new System.Drawing.Point(7, 239);
             this.FoodPrice.Name = "FoodPrice";
-            this.FoodPrice.Size = new System.Drawing.Size(238, 118);
+            this.FoodPrice.Size = new System.Drawing.Size(279, 118);
             this.FoodPrice.TabIndex = 0;
             this.FoodPrice.TabStop = false;
             this.FoodPrice.Text = "До оплати:";
@@ -523,24 +415,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label Price1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox txtbox1;
-        private System.Windows.Forms.TextBox txtbox4;
-        private System.Windows.Forms.TextBox txtbox3;
-        private System.Windows.Forms.TextBox txtbox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtbox5;
-        private System.Windows.Forms.TextBox txtbox8;
-        private System.Windows.Forms.TextBox txtbox7;
-        private System.Windows.Forms.TextBox txtbox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox FinalPrice;
         private System.Windows.Forms.Button Btn_Calculate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
 
