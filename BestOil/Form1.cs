@@ -19,8 +19,8 @@ namespace BestOil
         List<string> names = new List<string> { "A-76", "A-92", "A-95", "Дизель", "Газ", "A-44", "A-80" };
         List<double> prices = new List<double> { 6.40, 7.80, 9.00, 5.00, 3.46, 5.65, 7.15 };
 
-        List<string> namesProduct = new List<string> { "Кофе", "Чай"/*, "Булочка", "Ватрушка", "Пирожок", "Кока-Кола", "Фанта"*/ };
-        List<double> pricesProduct = new List<double> { 6.40, 7.80/*, 9.00, 5.00, 3.46, 5.65, 7.15 */};
+        List<string> namesProduct = new List<string> { "Кофе", "Чай", "Булочка", "Ватрушка", "Пирожок", "Кока-Кола", "Фанта" };
+        List<double> pricesProduct = new List<double> { 6.40, 7.80, 9.00, 5.00, 3.46, 5.65, 7.15 };
 
         double totalIncome = 0;
         Timer timer = new Timer();
@@ -30,6 +30,10 @@ namespace BestOil
         public BestOil()
         {
             InitializeComponent();
+
+            timer.Tick += Timer_Tick;
+            timer.Interval = 10000;
+
             #region Oil and Prices
             comboBox1.DataSource = names;
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
@@ -49,12 +53,13 @@ namespace BestOil
 
                 TextBox textBoxPrice = new TextBox();
                 textBoxPrice.Location = new Point(109, 12 + i * 28);
+                textBoxPrice.Size = new Size(65, 22);
                 textBoxPrice.Text = pricesProduct[i].ToString();
                 textBoxPrice.ReadOnly = true;
 
                 NumericUpDown numericUpDownAmount = new NumericUpDown();
-                numericUpDownAmount.Location = new Point(186, 12 + i * 28);
-                numericUpDownAmount.Size = new Size(69, 22);
+                numericUpDownAmount.Location = new Point(190, 12 + i * 28);
+                numericUpDownAmount.Size = new Size(65, 22);
                 numericUpDownAmount.Minimum = 0;
                 numericUpDownAmount.Maximum = 1000;
                 numericUpDownAmount.Enabled = false;
@@ -75,18 +80,6 @@ namespace BestOil
 
             }
 
-            //txtbox1.Text = "4,00";
-            //txtbox2.Text = "5,40";
-            //txtbox3.Text = "7,20";
-            //txtbox4.Text = "4,40";
-            //txtbox5.Text = "0";
-            //txtbox6.Text = "0";
-            //txtbox7.Text = "0";
-            //txtbox8.Text = "0";
-            //txtbox5.Enabled = false;
-            //txtbox6.Enabled = false;
-            //txtbox7.Enabled = false;
-            //txtbox8.Enabled = false;
             Price2.Text = "0,00";
             #endregion
 
@@ -97,23 +90,8 @@ namespace BestOil
             SumText.Enabled = false;
             #endregion
 
-            #region Quantity of food
-            //checkBox1.CheckedChanged += CheckBox1_CheckedChanged;
-            //checkBox2.CheckedChanged += CheckBox2_CheckedChanged;
-            //checkBox3.CheckedChanged += CheckBox3_CheckedChanged;
-            //checkBox4.CheckedChanged += CheckBox4_CheckedChanged;
-            //txtbox5.TextChanged += Txt_TextChanged;
-            //txtbox6.TextChanged += Txt_TextChanged;
-            //txtbox7.TextChanged += Txt_TextChanged;
-            //txtbox8.TextChanged += Txt_TextChanged;
-            #endregion
 
             #region Style
-            textBox1.KeyPress += (sender, e) => e.Handled = true;
-            //txtbox1.KeyPress += (sender, e) => e.Handled = true;
-            //txtbox2.KeyPress += (sender, e) => e.Handled = true;
-            //txtbox3.KeyPress += (sender, e) => e.Handled = true;
-            //txtbox4.KeyPress += (sender, e) => e.Handled = true;
             //Picture.ImageLocation = "scrudge.jpg";
             this.FormClosing += BestOil_FormClosing;
             #endregion
@@ -121,12 +99,29 @@ namespace BestOil
 
         private void NumericUpDownAmount_ValueChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            decimal SumAll = 0;
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].CheckBox_Enable.Checked == true)
+                {
+                    SumAll += products[i].Price * products[i].Amount.Value;
+                }
+            }
+            Price2.Text = String.Format("{0:0.00}", SumAll);
         }
 
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CheckBox check = sender as CheckBox;
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].CheckBox_Enable == check)
+                {
+                    products[i].Amount.Enabled = check.Checked;
+                    NumericUpDownAmount_ValueChanged(sender, e);
+                    break;
+                }
+            }
         }
 
         private void BestOil_FormClosing(object sender, FormClosingEventArgs e)
@@ -149,8 +144,6 @@ namespace BestOil
             label9.Text = String.Format("{0:0.00}", res);
             if (!timer.Enabled)
             {
-                timer.Interval = 10000;
-                timer.Tick += Timer_Tick;
                 timer.Start();
             }
 
@@ -168,15 +161,12 @@ namespace BestOil
                 QuantityText.Text = "";
                 SumText.Text = "";
                 Price1.Text = "0,00";
-                Price2.Text = "0,00";
-                //checkBox1.Checked = false;
-                //checkBox2.Checked = false;
-                //checkBox3.Checked = false;
-                //checkBox4.Checked = false;
-                //txtbox5.Text = "0";
-                //txtbox6.Text = "0";
-                //txtbox7.Text = "0";
-                //txtbox8.Text = "0";
+                foreach (var item in products)
+                {
+                    item.Amount.Value = 0;
+                    item.Amount.Enabled = false;
+                    item.CheckBox_Enable.Checked = false;
+                }
                 label9.Text = "";
             }
         }
@@ -220,87 +210,6 @@ namespace BestOil
             }
         }
 
-        private void Txt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32((sender as TextBox).Text) < 0)
-                {
-                    (sender as TextBox).Text = "0";
-                }
-            }
-            catch (Exception)
-            {
-                (sender as TextBox).Text = "";
-                return;
-            }
-            double res = 0;
-            //if (checkBox1.Checked)
-            //{
-            //    res += Convert.ToInt32(txtbox5.Text) * Convert.ToDouble(txtbox1.Text);
-            //}
-            //if (checkBox2.Checked)
-            //{
-            //    res += Convert.ToInt32(txtbox6.Text) * Convert.ToDouble(txtbox2.Text);
-            //}
-            //if (checkBox3.Checked)
-            //{
-            //    res += Convert.ToInt32(txtbox7.Text) * Convert.ToDouble(txtbox3.Text);
-            //}
-            //if (checkBox4.Checked)
-            //{
-            //    res += Convert.ToInt32(txtbox8.Text) * Convert.ToDouble(txtbox4.Text);
-            //}
-            Price2.Text = String.Format("{0:0.00}", res);
-        }
-
-        //private void CheckBox4_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox4.Checked)
-        //    {
-        //        txtbox8.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        txtbox8.Enabled = false;
-        //    }
-        //}
-
-        //private void CheckBox3_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox3.Checked)
-        //    {
-        //        txtbox7.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        txtbox7.Enabled = false;
-        //    }
-        //}
-
-        //private void CheckBox2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox2.Checked)
-        //    {
-        //        txtbox6.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        txtbox6.Enabled = false;
-        //    }
-        //}
-
-        //private void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (checkBox1.Checked)
-        //    {
-        //        txtbox5.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        txtbox5.Enabled = false;
-        //    }
-        //}
 
         private void SumText_TextChanged(object sender, EventArgs e)
         {

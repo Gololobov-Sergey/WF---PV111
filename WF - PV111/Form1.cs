@@ -141,6 +141,12 @@ namespace WF___PV111
 
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
+
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
