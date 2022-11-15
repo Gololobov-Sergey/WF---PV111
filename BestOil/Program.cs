@@ -16,7 +16,7 @@ namespace BestOil
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BestOil());
+            Application.Run(new LoginForm());
         }
     }
 }

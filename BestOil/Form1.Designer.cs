@@ -30,8 +30,6 @@
         {
             this.Cafe = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.FoodPrice = new System.Windows.Forms.GroupBox();
@@ -56,19 +54,28 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Btn_Calculate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Cafe.SuspendLayout();
             this.FoodPrice.SuspendLayout();
             this.Station.SuspendLayout();
             this.PriceOptions.SuspendLayout();
             this.FoodPrice2.SuspendLayout();
             this.FinalPrice.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // Cafe
             // 
+            this.Cafe.Controls.Add(this.panel2);
             this.Cafe.Controls.Add(this.panel1);
-            this.Cafe.Controls.Add(this.textBox6);
-            this.Cafe.Controls.Add(this.textBox7);
             this.Cafe.Controls.Add(this.label8);
             this.Cafe.Controls.Add(this.label7);
             this.Cafe.Controls.Add(this.FoodPrice);
@@ -76,7 +83,7 @@
             this.Cafe.ForeColor = System.Drawing.Color.IndianRed;
             this.Cafe.Location = new System.Drawing.Point(311, 22);
             this.Cafe.Name = "Cafe";
-            this.Cafe.Size = new System.Drawing.Size(292, 368);
+            this.Cafe.Size = new System.Drawing.Size(292, 371);
             this.Cafe.TabIndex = 0;
             this.Cafe.TabStop = false;
             this.Cafe.Text = "Міні-Кафе";
@@ -84,34 +91,16 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(7, 66);
+            this.panel1.Location = new System.Drawing.Point(6, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(279, 151);
             this.panel1.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.ForeColor = System.Drawing.Color.Tomato;
-            this.textBox6.Location = new System.Drawing.Point(83, 144);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(69, 22);
-            this.textBox6.TabIndex = 21;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox7
-            // 
-            this.textBox7.ForeColor = System.Drawing.Color.Tomato;
-            this.textBox7.Location = new System.Drawing.Point(159, 144);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(69, 22);
-            this.textBox7.TabIndex = 22;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(190, 48);
+            this.label8.Location = new System.Drawing.Point(190, 25);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 15);
             this.label8.TabIndex = 16;
@@ -121,7 +110,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(113, 48);
+            this.label7.Location = new System.Drawing.Point(113, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 15);
             this.label7.TabIndex = 11;
@@ -160,6 +149,7 @@
             // 
             // Station
             // 
+            this.Station.Controls.Add(this.panel3);
             this.Station.Controls.Add(this.label4);
             this.Station.Controls.Add(this.label3);
             this.Station.Controls.Add(this.comboBox1);
@@ -174,7 +164,7 @@
             this.Station.ForeColor = System.Drawing.Color.Lime;
             this.Station.Location = new System.Drawing.Point(28, 22);
             this.Station.Name = "Station";
-            this.Station.Size = new System.Drawing.Size(265, 368);
+            this.Station.Size = new System.Drawing.Size(265, 371);
             this.Station.TabIndex = 1;
             this.Station.TabStop = false;
             this.Station.Tag = "Кількість";
@@ -184,7 +174,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 132);
+            this.label4.Location = new System.Drawing.Point(3, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 10;
@@ -212,7 +202,7 @@
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.textBox1.Location = new System.Drawing.Point(66, 131);
+            this.textBox1.Location = new System.Drawing.Point(67, 106);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 22);
             this.textBox1.TabIndex = 7;
@@ -363,6 +353,85 @@
             this.Btn_Calculate.TabIndex = 1;
             this.Btn_Calculate.Text = "Прорахувати";
             this.Btn_Calculate.UseVisualStyleBackColor = false;
+            this.Btn_Calculate.Click += new System.EventHandler(this.Btn_Calculate_Click_1);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(63, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(24, 23);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "A";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(33, 6);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(24, 23);
+            this.btnEdit.TabIndex = 19;
+            this.btnEdit.Text = "E";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(3, 6);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(24, 23);
+            this.btnDel.TabIndex = 20;
+            this.btnDel.Text = "D";
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnDel);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Location = new System.Drawing.Point(186, 209);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(94, 32);
+            this.panel2.TabIndex = 21;
+            this.panel2.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = new System.Drawing.Point(157, 209);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(94, 32);
+            this.panel3.TabIndex = 22;
+            this.panel3.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "D";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(63, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "A";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(33, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "E";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // BestOil
             // 
@@ -375,7 +444,7 @@
             this.Controls.Add(this.Cafe);
             this.ForeColor = System.Drawing.Color.Black;
             this.MaximumSize = new System.Drawing.Size(650, 622);
-            this.MinimumSize = new System.Drawing.Size(650, 622);
+            this.MinimumSize = new System.Drawing.Size(650, 350);
             this.Name = "BestOil";
             this.Text = "BestOil";
             this.Cafe.ResumeLayout(false);
@@ -390,6 +459,8 @@
             this.FoodPrice2.PerformLayout();
             this.FinalPrice.ResumeLayout(false);
             this.FinalPrice.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,8 +493,14 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

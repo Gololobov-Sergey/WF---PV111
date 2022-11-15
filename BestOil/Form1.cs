@@ -27,7 +27,7 @@ namespace BestOil
 
         List<Product> products = new List<Product>();
 
-        public BestOil()
+        public BestOil(bool admin)
         {
             InitializeComponent();
 
@@ -90,11 +90,29 @@ namespace BestOil
             SumText.Enabled = false;
             #endregion
 
-
             #region Style
             //Picture.ImageLocation = "scrudge.jpg";
             this.FormClosing += BestOil_FormClosing;
             #endregion
+
+            if(admin)
+            {
+                PriceOptions.Visible = false;
+                QuantityText.Visible = false;
+                SumText.Visible = false;
+                label1.Visible = false;
+                label2.Visible = false;
+                FoodPrice2.Visible = false;
+                FoodPrice.Visible = false;
+                FinalPrice.Visible = false;
+                Station.Size = new Size(265, 247);
+                Cafe.Size = new Size(292, 247);
+                this.MinimumSize = new Size(650, 350);
+                this.Size = new Size(650, 350);
+                panel2.Visible = true;
+                panel3.Visible = true;
+
+            }
         }
 
         private void NumericUpDownAmount_ValueChanged(object sender, EventArgs e)
@@ -173,6 +191,8 @@ namespace BestOil
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.DataSource == null)
+                return;
             textBox1.Text = prices[comboBox1.SelectedIndex].ToString();
             if (Quantity.Checked)
             {
@@ -252,6 +272,38 @@ namespace BestOil
                 return;
             }
             Price1.Text = String.Format("{0:0.00}", Convert.ToDouble(QuantityText.Text) * Convert.ToDouble(textBox1.Text));
+        }
+
+        private void Btn_Calculate_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddEditForm addEditForm = new AddEditForm();
+            addEditForm.Text = "Додавання пального";
+            if(addEditForm.ShowDialog() == DialogResult.OK)
+            {
+                names.Add(addEditForm.ProductName);
+                prices.Add(addEditForm.ProductPrice);
+                comboBox1.DataSource = null;
+                comboBox1.DataSource = names;
+                comboBox1.SelectedIndex = 0;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int ind = comboBox1.SelectedIndex;
+            if (MessageBox.Show($"Точно хочете видалити {names[ind]}", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                names.RemoveAt(ind);
+                prices.RemoveAt(ind);
+                comboBox1.DataSource = null;
+                comboBox1.DataSource = names;
+                comboBox1.SelectedIndex = 0;
+            }
         }
     }
 
