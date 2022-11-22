@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DragNDrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DragNDrop.Designer.cs">
+      <DependentUpon>DragNDrop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DragNDrop.resx">
+      <DependentUpon>DragNDrop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editor.resx">
       <DependentUpon>Editor.cs</DependentUpon>
     </EmbeddedResource>

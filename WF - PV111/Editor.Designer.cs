@@ -69,6 +69,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.listView2 = new System.Windows.Forms.ListView();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -296,23 +297,42 @@
             // 
             // listView1
             // 
+            this.listView1.AllowDrop = true;
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
+            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             // 
             // imageList1
             // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            resources.ApplyResources(this.imageList1, "imageList1");
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "CSForm.png");
+            this.imageList1.Images.SetKeyName(1, "CSharpLogo.png");
+            this.imageList1.Images.SetKeyName(2, "step.png");
+            this.imageList1.Images.SetKeyName(3, "Python.png");
+            // 
+            // listView2
+            // 
+            this.listView2.FullRowSelect = true;
+            this.listView2.HideSelection = false;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("listView2.Items"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("listView2.Items1")))});
+            this.listView2.LargeImageList = this.imageList1;
+            resources.ApplyResources(this.listView2, "listView2");
+            this.listView2.Name = "listView2";
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Tile;
             // 
             // Editor
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.treeView1);
@@ -374,5 +394,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView listView2;
     }
 }

@@ -211,6 +211,11 @@ namespace WF___PV111
         {
             treeView1.Nodes.Remove(treeView1.SelectedNode);
         }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            
+        }
     }
 
 
